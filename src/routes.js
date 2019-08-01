@@ -10,9 +10,8 @@ import Skills from './Components/Skills'
 export default (
     <Switch>
         <Route path='/skills' component={Skills} />
-        {/* <Route path='/contact' component={Contact}/> */}
+        <Route path='/contact' component={Contact}/>
         <Route path='/portfolio' component={Portfolio} />
-        <Route path='/about' component={About} />
         <Route exact path='/' component={Home} />
     </Switch>
 )

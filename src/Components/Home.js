@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Nav from './Nav'
 import Footer from './Footer'
-import linkedinicon from '../Assets/linkedinport.svg'
-import githubicon from '../Assets/githubport.svg'
-import resicon from '../Assets/resumeport.svg'
+import riley from '../Assets/squareheadshot.jpg'
 
 export default function Home() {
   return (
@@ -13,20 +11,12 @@ export default function Home() {
       <Card>
         <Title>Welcome</Title>
         <Line />
-        <LinkBox>
-          <Link href='https://www.linkedin.com/in/riley-hatch-dev'>
-            <img src={linkedinicon} alt='link to linkedin'/>
-            <p>linkedin</p>
-          </Link>
-          <Link href='https://www.github.com/rileyeh'>
-            <img src={githubicon} alt='link to github'/>
-            <p>github</p>
-          </Link>
-          <Link>
-            <img src={resicon} alt='link to resume'/>
-            <p>resume</p>
-          </Link>
-        </LinkBox>
+        <Main>
+          <img src={riley} alt=''/>
+          <Text>
+          I am a full stack web developer who specializes in JavaScript, ReactJS, HTML, CSS, NodeJS, and PostgreSQL. I enjoy teaching, learning, and problem solving. Outside of work, you can find me with my family and friends, outside with my dog, or with a book. I also enjoy reading, playing games, hand lettering, and drawing. I love web development because it combines logic and design.
+          </Text>
+        </Main>
       </Card>
       <Footer/>
     </Body>
@@ -82,39 +72,22 @@ const Line = styled.div`
     margin: 40px 0px;
 `
 
-const Text = styled.p`
-    color: ${primary};
-    padding: 0px 110px;
-`
-
-const LinkBox = styled.div`
-  width: 70%;
-  height: 45%;
-  margin-top: 40px;
+const Main = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-`
-
-const Link = styled.a`
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
-  text-decoration: none;
 
   img {
-    width: 150px;
-    margin: 10px;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
   }
+`
 
-  p {
+const Text = styled.p`
     color: ${primary};
-    font-weight: bold;
-
-    &:hover {
-      color: ${highlight};
-    }
-  }
+    padding-left: 60px;
+    width: 55%;
+    font-size: 25px;
 `

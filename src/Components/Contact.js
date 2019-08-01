@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Nav from './Nav'
 import Footer from './Footer'
+import linkedinicon from '../Assets/linkedinport.svg'
+import githubicon from '../Assets/githubport.svg'
 
 export default function Contact() {
     return (
@@ -11,9 +13,18 @@ export default function Contact() {
                 <Title>Contact Information</Title>
                 <Line/>
                 <Text>
-                    email: rileyehatch@gmail.com
+                    rileyehatch@gmail.com
                 </Text>
-
+                <LinkBox>
+                    <Link href='https://www.linkedin.com/in/riley-hatch-dev'>
+                        <img src={linkedinicon} alt='link to linkedin'/>
+                        <p>linkedin</p>
+                    </Link>
+                    <Link href='https://www.github.com/rileyeh'>
+                        <img src={githubicon} alt='link to github'/>
+                        <p>github</p>
+                    </Link>
+                </LinkBox>
             </Card>
             <Footer/>
         </Body>
@@ -53,6 +64,7 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 `
 
 const Title = styled.h2`
@@ -74,4 +86,37 @@ const Text = styled.p`
     color: ${primary};
     padding: 0px 110px;
     width: 80%;
+    font-size: 20px;
+`
+
+const LinkBox = styled.div`
+  width: 70%;
+  height: 45%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`
+
+const Link = styled.a`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  text-decoration: none;
+
+  img {
+    width: 150px;
+    margin: 10px;
+  }
+
+  p {
+    color: ${primary};
+    font-weight: bold;
+
+    &:hover {
+      color: ${highlight};
+    }
+  }
 `

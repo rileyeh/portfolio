@@ -26,7 +26,7 @@ export default function Portfolio() {
                 <ul>+ Taught myself Chart.js and Styled-Components and integrated them into the project</ul>
                 <ul>+ Won best overall app</ul>
                 <a href='https://github.com/rileyeh/caltrend'>Github Repository</a>
-                <a href='https://rileyhatch.com/#/'>Live Site</a>
+                <a href='https://caltrend.rileyhatch.com'>Live Site</a>
                 <Pictures>
                     <p className='left'>&#60;</p>
                     <img src={calhome} alt='caltrend screenshot' style={{'width': 300}}/>
@@ -42,7 +42,7 @@ export default function Portfolio() {
                 <ul>+ Implemented HTML drag and drop for users to place pieces on a game board and wrote functions to handle illegal placements</ul>
                 <ul>+ Handled data manipulation for storage and retrieval from the database</ul>
                 <a href='https://github.com/btlsrv/btlsrv'>Github Repository</a>
-                <a href=''>Live Site</a>
+                <a href='https://btlsrv.rileyhatch.com'>Live Site</a>
                 <Pictures>
                     <p className='left'>&#60;</p>
                     <img src={dashboard} alt='caltrend screenshot' style={{'width': 300}}/>
