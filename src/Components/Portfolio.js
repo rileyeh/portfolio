@@ -1,41 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Nav from './Nav'
 import Footer from './Footer'
-import calfood from '../Assets/calfood.png'
-import calhome from '../Assets/calhome.png'
-import calmeals from '../Assets/calmeals.png'
-import calweight from '../Assets/calweights.png'
-import calmenu from '../Assets/calmenu.png'
-import dashboard from '../Assets/Dashboard.png'
-import gameplay from '../Assets/Gameplay.png'
-import addmap from '../Assets/AddMap.png'
+import Photos from './Photos'
+import { Body, Title, Line } from './Styled'
 
 export default function Portfolio() {
+    const [photos, setPhotos] = useState('')
+
     return (
         <Body>
             <Nav/>
             <Card>
                 <Title>Portfolio</Title>
-                <Line />
                 <Text>
-                <h2>Caltrend</h2>
-                <h4>React | HTML5 | CSS4 | NodeJS | Express | Massive PostgreSQL | ChartJS | Styled-Components</h4>
-                <ul>+ Designed, created, and hosted a fully functional, mobile responsive web app that tracks nutrition and weight</ul>
-                <ul>+ Implemented a searchable USDA nutrition database and wrote a function to handle conversions</ul>
-                <ul>+ Taught myself Chart.js and Styled-Components and integrated them into the project</ul>
-                <ul>+ Won best overall app</ul>
-                <a href='https://github.com/rileyeh/caltrend'>Github Repository</a>
-                <a href='https://caltrend.rileyhatch.com'>Live Site</a>
-                <Pictures>
-                    <p className='left'>&#60;</p>
-                    <img src={calhome} alt='caltrend screenshot' style={{'width': 300}}/>
-                    <img src={calfood} alt='caltrend screenshot' style={{'width': 300}}/>
-                    <img src={calweight} alt='caltrend screenshot' style={{'width': 200}}/>
-                    <img src={calmenu} alt='caltrend screenshot' style={{'width': 200}}/>
-                    <img src={calmeals} alt='caltrend screenshot' style={{'width': 300}}/>
-                    <p className='right'>&#62;</p>
-                </Pictures>
+                <Line />
+                <h2>Lister</h2>
+                <h4>React | HTML5 | Sass | Context | Hooks | NodeJS | Express | Massive | PostgreSQL</h4>
+                <ul>+ Coded a list making app to practice hooks and React context</ul>
+                <ul>+ Worked with DigitalOcean and Nginx to host (and figured out my fair share of problems)</ul>
+                <a href='https://github.com/rileyeh/lister'>Github Repository</a>
+                <a href='https://lister.rileyhatch.com'>Live Site</a>
+                <span onClick={() => setPhotos('list')}>Photos</span>
+                {photos === 'list' ?  <Photos setPhotos={setPhotos} id='list'/> : null}
+            
                 <h2>BTLSRV</h2>
                 <h4>React | HTML5 | CSS3 | NodeJS | Express | Massive PostgreSQL | Socket.io | Sass</h4>
                 <ul>+ Designed and styled the majority of the app</ul>
@@ -43,13 +31,30 @@ export default function Portfolio() {
                 <ul>+ Handled data manipulation for storage and retrieval from the database</ul>
                 <a href='https://github.com/btlsrv/btlsrv'>Github Repository</a>
                 <a href='https://btlsrv.rileyhatch.com'>Live Site</a>
-                <Pictures>
-                    <p className='left'>&#60;</p>
-                    <img src={dashboard} alt='caltrend screenshot' style={{'width': 300}}/>
-                    <img src={addmap} alt='caltrend screenshot' style={{'width': 300}}/>
-                    <img src={gameplay} alt='caltrend screenshot' style={{'width': 300}}/>
-                    <p className='right'>&#62;</p>
-                </Pictures>
+                <span onClick={() => setPhotos('btl')}>Photos</span>
+                {photos === 'btl' ?  <Photos setPhotos={setPhotos} id='btl'/> : null}
+
+                <h2>Shut Eye</h2>
+                <h4>React | HTML5 | CSS3 | Moment.js </h4>
+                <ul>+ First app I made by myself, when I was first learning React</ul>
+                <ul>+ Implemented a date picker and used Moment.js to handle dates</ul>
+                <ul>+ This is a database-less project</ul>
+                <a href='https://github.com/rileyeh/shut-eye'>Github Repository</a>
+                <a href='https://shuteye.rileyhatch.com'>Live Site</a>
+                <span onClick={() => setPhotos('shut')}>Photos</span>
+                {photos === 'shut' ?  <Photos setPhotos={setPhotos} id='shut'/> : null}
+
+                <h2>Caltrend</h2>
+                <h3><span role='img' aria-label='construction barrier'>🚧</span> currently under construction <span role='img' aria-label='construction barrier'>🚧</span> </h3>
+                <h4>React | HTML5 | CSS3 | NodeJS | Express | Massive PostgreSQL | Redux | ChartJS | Styled-Components</h4>
+                <ul>+ Designed, created, and hosted a fully functional, mobile responsive web app that tracks nutrition and weight</ul>
+                <ul>+ Implemented a searchable USDA nutrition database and wrote a function to handle conversions</ul>
+                <ul>+ Taught myself Chart.js and Styled-Components and integrated them into the project</ul>
+                <ul>+ Won best overall app</ul>
+                <a href='https://github.com/rileyeh/caltrend'>Github Repository</a>
+                <a href='https://caltrend.rileyhatch.com'>Live Site</a>
+                <span onClick={() => setPhotos('cal')}>Photos</span>
+                {photos === 'cal' ?  <Photos setPhotos={setPhotos} id='cal'/> : null}
                 </Text>
             </Card>
             <Footer/>
@@ -58,27 +63,9 @@ export default function Portfolio() {
 }
 
 let primary = '#000F46'
-let primaryAccent = '#003C9C'
-let secondary = '#2FDA77'
-let tertiary = '#F1C40F'
 let highlight = '#CF366C'
-let shadow = '#515C5D'
-let shadowAccent = '#C7C3BD'
 let white = '#FFFFFF'
-let black = '#333333'
-
-const Body = styled.div`
-  background: ${primary};
-  background-size: 20px 20px;
-  background-image: radial-gradient(circle, ${primaryAccent} 1px, rgba(0, 0, 0, 0) 1px);
-  // background-image: linear-gradient(to right, ${primaryAccent} 1px, transparent 1px), linear-gradient(to bottom, ${primaryAccent} 1px, transparent 1px);
-  min-height: 100vh;
-  max-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
+let primaryAccent = '#003C9C'
 
 const Card = styled.div`
     width: 90vw;
@@ -92,29 +79,29 @@ const Card = styled.div`
     overflow-y: scroll;
 `
 
-const Title = styled.h2`
-    color: ${primary};
-    height: 40px;
-    font-size: 40px;
-    // text-shadow: 2px 2px 0px ${secondary};
-    padding: 40px;
-`
-
-const Line = styled.div`
-    height: 3px;
-    width: 80%;
-    background: linear-gradient(to right, ${tertiary}, #d8ff3b, ${secondary});
-    margin: 40px 0px;
-    z-index: 5;
-`
-
 const Text = styled.div`
     color: ${primary};
-    padding: 0px 110px;
+    padding: 100px;
+    padding-top: 0;
     width: 95%;
     line-height: 1.5;
 
+    h2 {
+        margin-top: 20px;
+    }
+
     a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: ${highlight};
+        margin-bottom: 20px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    span {
         margin-right: 15px;
         text-decoration: none;
         color: ${highlight};
@@ -124,38 +111,3 @@ const Text = styled.div`
         }
     }
 `
-
-const Pictures = styled.div`
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    width: 95%;
-    position: relative;
-    margin: 10px 0;
-
-    img {
-        margin-right: 10px;
-    }
-
-    p {
-        display: none;
-    }
-
-    &:hover {
-        p {
-            color: ${primary};
-            font-size: 24px;
-            display: block;
-            position: sticky;
-            z-index: 5;
-            text-shadow: 0 0 10px #ffffff;
-        }
-        .left {
-            left: 10px;
-        }
-
-        .right {
-            right: 10px;
-        }
-    }
-`   

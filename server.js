@@ -9,4 +9,4 @@ app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/build/index.html'))
 })
 
-app.listen(4004, () => console.log(`up and running on 4004`))
+app.listen(4004, () => console.log(`up and running on 4004`)) 
